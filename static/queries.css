@@ -1,0 +1,111 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f8;
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  margin-left: 230px;
+  font-size: 24px;
+}
+
+.top-right-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.back-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+
+.logout-btn {
+  background-color: #ff6666;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.main-table-section {
+  padding: 30px;
+}
+
+.main-table-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background-color: #003366;
+  color: white;
+  font-weight: normal;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.action-buttons button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  cursor: pointer;
+  color: white;
+}
+
+.handle-btn {
+  background-color: #9dda8b;
+}
+
+.update-btn {
+  background-color: #e7a446;
+}
+
+.close-btn {
+  background-color: #5cb85c;
+}
+
+.action-buttons button:hover {
+  opacity: 0.9;
+}

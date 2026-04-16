@@ -1,0 +1,87 @@
+<!-- templates/contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact Us - NearNest</title>
+    <link rel="stylesheet" href="/static/dark-style.css">
+    
+    <style>
+        /* Fade-in effect */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+        .contact-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #000;
+        }
+
+        .contact-container h2 {
+            color: #90caf9;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-container p {
+            color: #ccc;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .contact-info {
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .btn-back {
+            display: block;
+            margin: 2rem auto 0;
+            padding: 0.5rem 1rem;
+            background-color: #90caf9;
+            color: #000;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            width: fit-content;
+        }
+    </style>
+</head>
+<body class="dark-body">
+
+    <header class="dark-header">
+        <h1>Contact NearNest</h1>
+        <p>We’d love to hear from you!</p>
+    </header>
+
+    <div class="contact-container">
+        <h2>Reach Out 📧</h2>
+        <p>If you have any questions, suggestions, or need support, feel free to contact us.</p>
+        
+        <div class="contact-info">
+            <p><strong>Email:</strong> support@nearnest.in</p>
+            <p><strong>Phone:</strong> +91 98765 43210</p>
+            <p><strong>Address:</strong> MIT ADT University Campus, Loni Kalbhor, Pune, Maharashtra</p>
+        </div>
+        <div class="image-container">
+    <img src="/static/icons/contact.png" alt="contact" width="250px" height="250px" class="center-img"> 
+</div>
+    </div>
+
+    <a href="/" class="btn-back">← Back to Home</a>
+
+    <footer class="dark-footer" style="margin-top: 50px;">
+        <p>&copy; 2025 NearNest | Built with ❤️ in Pune</p>
+    </footer>
+
+</body>
+</html>

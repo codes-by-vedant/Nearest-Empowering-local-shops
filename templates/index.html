@@ -1,0 +1,158 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pune Business Finder</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="top-nav">
+      <a href="/about" style="padding: 10px 10px; font-size: 1.1rem;">About</a>
+      <a href="/contact" style="padding: 10px 10px; font-size: 1.1rem;">Contact Us</a>
+    </div>
+    <div class="container">
+      <img src="/static/icons/logo.png.png" alt="Logo" class="site-logo-left" width="500" height="500">
+      <h1>NearNest</h1>
+      <p>Find the perfect store for your needs!</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="search-section">
+      <form action="/businesses" method="get">
+        <input type="text" name="search" placeholder="🔍 Search by name, area, or category...">
+        <button type="submit">Search</button>
+      </form>
+    </section>
+
+    <section class="featured-section">
+      <h2>Categories</h2>
+      <div class="category-grid" id="categoryContainer">
+        <!-- First 9 visible -->
+        <a href="/businesses?category=Grocery shops" class="category-item">
+          <img src="/static/icons/grocery.png"><span>Grocery Shops</span>
+        </a>
+        <a href="/businesses?category=Clothing & Fashion" class="category-item">
+          <img src="/static/icons/fashion.png"><span>Clothing & Fashion</span>
+        </a>
+        <a href="/businesses?category=Restaurants" class="category-item">
+          <img src="/static/icons/restaurants.png"><span>Restaurants</span>
+        </a>
+        <a href="/businesses?category=Hotels" class="category-item">
+          <img src="/static/icons/hotels.png"><span>Hotels</span>
+        </a>
+        <a href="/businesses?category=Salon" class="category-item">
+          <img src="/static/icons/saloon.png"><span>Salon</span>
+        </a>
+        <a href="/businesses?category=Plant Nursery" class="category-item">
+          <img src="/static/icons/plants.png"><span>Plant Nursery</span>
+        </a>
+        <a href="/businesses?category=Electronics" class="category-item">
+          <img src="/static/icons/electronics.png"><span>Electronics</span>
+        </a>
+        <a href="/businesses?category=Health" class="category-item">
+          <img src="/static/icons/health.png"><span>Health</span>
+        </a>
+        <a href="/businesses?category=Bakery" class="category-item">
+          <img src="/static/icons/bakery.png"><span>Bakery</span>
+        </a>
+
+        <!-- Hidden Categories -->
+        <a href="/businesses?category=Mobile Shops" class="category-item hidden">
+          <img src="/static/icons/mobile.png"><span>Mobile Shops</span>
+        </a>
+        <a href="/businesses?category=Hardware" class="category-item hidden">
+          <img src="/static/icons/hardware.png"><span>Hardware</span>
+        </a>
+        <a href="/businesses?category=Vegetables" class="category-item hidden">
+          <img src="/static/icons/vegetables.png"><span>Vegetables</span>
+        </a>
+        <a href="/businesses?category=Desserts" class="category-item hidden">
+          <img src="/static/icons/desserts.png"><span>Desserts</span>
+        </a>
+        <a href="/businesses?category=Stationary" class="category-item hidden">
+          <img src="/static/icons/stationary.png"><span>Stationery</span>
+        </a>
+        <a href="/businesses?category=Cafes" class="category-item hidden">
+          <img src="/static/icons/cafe.png"><span>Cafes</span>
+        </a>
+        <a href="/businesses?category=Automobile" class="category-item hidden">
+          <img src="/static/icons/automobile.png"><span>Automobile</span>
+        </a>
+        <a href="/businesses?category=Auto Accessories" class="category-item hidden">
+          <img src="/static/icons/automobileaccessories.png"><span>Auto Accessories</span>
+        </a>
+        <a href="/businesses?category=Jwellers" class="category-item hidden">
+          <img src="/static/icons/jwellers.png"><span>Jewellers</span>
+        </a>
+        <a href="/businesses?category=Garages" class="category-item hidden">
+          <img src="/static/icons/garages.png"><span>Garages</span>
+        </a>
+        <a href="/businesses?category=Optical Shops" class="category-item hidden">
+          <img src="/static/icons/optical.png"><span>Optical Shops</span>
+        </a>
+        <a href="/businesses?category=Cosmetics" class="category-item hidden">
+          <img src="/static/icons/cosmetics.png"><span>Cosmetics</span>
+        </a>
+        <a href="/businesses?category=Toys" class="category-item hidden">
+          <img src="/static/icons/toys.png"><span>Toys</span>
+        </a>
+        <a href="/businesses?category=Sports" class="category-item hidden">
+          <img src="/static/icons/sports.png"><span>Sports</span>
+        </a>
+        <a href="/businesses?category=Home Furniture" class="category-item hidden">
+          <img src="/static/icons/furniture.png"><span>Home Furniture</span>
+        </a>
+        <a href="/businesses?category=Kitchen Accessories" class="category-item hidden">
+          <img src="/static/icons/kitchen.png"><span>Kitchen Accessories</span>
+        </a>
+        <a href="/businesses?category=Books" class="category-item hidden">
+          <img src="/static/icons/books.png"><span>Books</span>
+        </a>
+        <a href="/businesses?category=Gardening" class="category-item hidden">
+          <img src="/static/icons/gardening.png"><span>Gardening</span>
+        </a>
+        <a href="/businesses?category=Clocks" class="category-item hidden">
+          <img src="/static/icons/clock.png"><span>Clocks</span>
+        </a>
+        <a href="/businesses?category=Home services" class="category-item hidden">
+          <img src="/static/icons/homeservices.png"><span>Home Services</span>
+        </a>
+        <a href="/businesses?category=Travel" class="category-item hidden">
+          <img src="/static/icons/travel.png"><span>Travel</span>
+        </a>
+
+        <!-- See More Button -->
+        <div class="category-item view-all" onclick="toggleMoreCategories()">
+          <img src="/static/icons/viewall.png" alt="View All">
+          <span id="viewAllText">See More Categories</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="nav-links">
+      <a href="/businesses" class="btn">View All Businesses</a>
+      <a href="{{ url_for('owner_login') }}" class="btn btn-primary">Add Your Business</a>
+      <a href="/about" class="btn">About</a>
+      <a href="/login-dashboard" class="btn login-btn">Login</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 NearNest Store locator | Built with ❤️ in Pune</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMoreCategories() {
+      const hiddenItems = document.querySelectorAll('.category-item.hidden');
+      const viewText = document.getElementById("viewAllText");
+      hiddenItems.forEach(item => item.classList.toggle('visible'));
+      viewText.textContent = viewText.textContent === 'See More Categories' ? 'Show Less' : 'See More Categories';
+    }
+  </script>
+</body>
+</html>

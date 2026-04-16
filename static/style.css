@@ -1,0 +1,209 @@
+/* ========== Base ========== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f4f6;
+    color: #222;
+}
+
+/* ========== Header ========== */
+.header {
+    background-color: #6b107f;
+    color: white;
+    padding: 2rem 1rem 1rem 1rem;
+    text-align: center;
+    position: relative;
+}
+.top-nav {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.top-nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.top-nav a:hover {
+    text-decoration: underline;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 1rem;
+}
+
+/* ========== Search Section ========== */
+.search-section {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.search-section input[type="text"] {
+    padding: 0.8rem;
+    width: 60%;
+    max-width: 500px;
+    font-size: 1rem;
+    border-radius: 8px;
+    background-color: #e3d8e6;
+    border: 1px solid #ccc;
+}
+
+.login-btn {
+  position: relative;
+  top: 50px;
+  right: 245px;
+  padding: 8px 16px;
+  margin: 8px;
+  background-color: #23b10a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.login-btn:hover {
+  background-color: #741f94;
+}
+
+.search-section button {
+    padding: 0.8rem 1.5rem;
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    background-color: #6b107f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* ========== Featured Categories ========== */
+.featured-section h2,
+.category-section h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.category-container,
+.category-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto 1rem auto;
+}
+
+.category-btn,
+.category-item {
+    width: 120px;
+    text-align: center;
+    font-size: 14px;
+    color: #444;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+}
+
+.category-btn {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    border-radius: 10px;
+    color: #444;
+}
+
+.category-btn:hover,
+.category-item:hover {
+    transform: scale(1.05);
+}
+
+.category-btn img,
+.category-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    margin-bottom: 10px;
+    background-color: #fff;
+    padding: 8px;
+}
+
+/* ========== View All (See More) Button ========== */
+.view-all,
+.see-more-container {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.view-all {
+    cursor: pointer;
+    background-color: #eee;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.see-more-btn {
+    background-color: #10b981;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* ========== Nav Links Section ========== */
+.nav-links {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 10px 20px;
+    background-color: #b23dcf;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* ========== Footer ========== */
+.footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    background-color: #e5e7eb;
+}
+
+/* ========== Visibility Classes ========== */
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block !important;
+}
+.site-logo-left {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 130px;
+  height: 130px;
+}

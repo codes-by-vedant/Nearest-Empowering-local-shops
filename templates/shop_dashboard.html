@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop Owner Dashboard - NearNest</title>
+    <link rel="stylesheet" href="/static/login_dashboard.css">
+</head>
+<body>
+
+    <header class="header">
+    <div class="top-nav">
+      <a href="/about" style="padding: 10px 10px; font-size: 1.1rem;">About</a>
+      <a href="/contact" style="padding: 10px 10px; font-size: 1.1rem;">Contact Us</a>
+    </div>
+    <div class="container">
+      <img src="/static/icons/logo.png.png" alt="Logo" class="site-logo-left" width="500" height="500">
+      <h1>NearNest</h1>
+      <p>Find the perfect store for your needs!</p>
+    </div>
+  </header>
+
+    <!-- Login success alert -->
+    {% if login_success %}
+    <div class="alert success">
+        ✅ Login successful! Welcome back.
+    </div>
+    <script>
+        setTimeout(() => {
+            document.querySelector('.alert.success').style.display = 'none';
+        }, 3000);
+    </script>
+    {% endif %}
+
+    <!-- Dashboard Buttons -->
+    <div class="dashboard-container">
+        <h2>Shop Owner Dashboard</h2>
+        <div class="dashboard-buttons">
+            <a href="{{ url_for('add_business') }}" class="dashboard-btn">➕ Add Business</a>
+            <a href="{{ url_for('modify_business') }}" class="dashboard-btn">✏️ Modify Business</a>
+        </div>
+    </div>
+
+    <!-- Logout Button -->
+    <div style="text-align: center; margin-top: 200px;">
+        <a href="{{ url_for('logout') }}" class="dashboard-btn" style="background-color: #dc3545;"> Logout</a>
+    </div>
+
+</body>
+</html>

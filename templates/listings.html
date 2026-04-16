@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Business Listings - NearNest</title>
+    <link rel="stylesheet" href="/static/dark-style.css">
+    
+</head>
+<body class="dark-body">
+
+    <header class="dark-header">
+        <h1>Explore Businesses Around Pune</h1>
+    </header>
+
+    <!-- 🔍 Search + Filter Bar -->
+    <form class="filter-bar" method="get" action="/businesses">
+        <input type="text" name="search" placeholder="Search by name, area..." value="{{ request.args.get('search', '') }}">
+        
+        <select name="category">
+            <option value="">All Categories</option>
+            <option value="Grocery">Grocery</option>
+            <option value="Clothing and Fashion">Clothing and Fashion</option>
+            <option value="Restaurants">Restaurants</option>
+            <option value="Hotels">Hotels</option>
+            <option value="Salon">Salon</option>
+            <option value="Plant Nursery">Plant Nursery</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Health">Health</option>
+            <option value="Bakery">Bakery</option>
+            <option value="Mobile Shops">Mobile Shops</option>
+            <option value="Hardware">Hardware</option>
+            <option value="Vegetables">Vegetables</option>
+            <option value="Desserts">Desserts</option>
+            <option value="Stationary">Stationary</option>
+            <option value="Cafes">Cafes</option>
+            <option value="Automobile">Automobile</option>
+            <option value="Auto Accessories">Auto Accessories</option>
+            <option value="Jwellers">Jwellers</option>
+            <option value="Garages">Garages</option>
+            <option value="Optical Shops">Optical Shops</option>
+            <option value="Cosmetics">Cosmetics</option>
+            <option value="Toys">Toys</option>
+            <option value="Sports">Sports</option>
+            <option value="Home Furniture">Home Furniture</option>
+            <option value="Kitchen Accessories">Kitchen Accessories</option>
+            <option value="Books">Books</option>
+            <option value="Gardening">Gardening</option>
+            <option value="Clocks">Clocks</option>
+            <option value="Home Services">Home Services</option>
+            <option value="Travel">Travel</option>
+            <option value="Others">Others</option>
+        </select>
+
+        <button type="submit">Apply</button>
+    </form>
+
+    <!-- 📦 Card Grid -->
+    <section class="card-grid">
+        {% for b in businesses %}
+        <div class="card">
+            <h3>{{ b[1] }}</h3>
+            <p><strong>Category:</strong> {{ b[2] }}</p>
+            <p><strong>Area:</strong> {{ b[3] }}</p>
+            <p>{{ b[6][:100] }}...</p>
+            <a href="/business/{{ b[0] }}" class="btn-view">View Details</a>
+        </div>
+        {% endfor %}
+    </section>
+
+    <section class="nav-links">
+        <a href="/" class="btn-dark">← Back to Home</a>
+    </section>
+
+    <footer class="dark-footer">
+        <p>&copy; 2025 NearNest Store locator | Proudly built in Pune 🇮🇳</p>
+    </footer>
+
+</body>
+</html>

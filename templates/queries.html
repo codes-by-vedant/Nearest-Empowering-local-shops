@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>All Queries - NearNest</title>
+  <link rel="stylesheet" href="/static/queries.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <img src="/static/icons/logo.png.png" alt="Logo" class="site-logo-left" width="100" height="100" />
+    <h1>Support Dashboard</h1>
+      <div class="top-right-buttons">
+        <a href="{{ url_for('support_dashboard') }}" class="back-btn">Back to Support Dashboard</a>
+        <a href="{{ url_for('logout') }}" class="logout-btn">Logout</a>
+      </div>
+  </header>
+
+  <!-- Main Section -->
+  <section class="main-table-section">
+    <h2>All Raised Queries</h2>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Business Name</th>
+            <th>Owner Name</th>
+            <th>Owner Email</th>
+            <th>Owner Contact</th>
+            <th>Problem</th>
+            <th>Status</th>
+            <th>Handle</th>
+            <th>Update Status</th>
+            <th>Close</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for query in queries %}
+          <tr>
+            <td>{{ query.business_name }}</td>
+            <td>{{ query.owner_name }}</td>
+            <td>{{ query.owner_email }}</td>
+            <td>{{ query.owner_contact }}</td>
+            <td>{{ query.problem }}</td>
+            <td>{{ query.status }}</td>
+            <td>
+              <form action="{{ url_for('handle_query', query_id=query.id) }}" method="GET" style="display:inline;">
+                <button type="submit" class="handle-btn">Handle Query</button>
+              </form>
+
+            </td>
+            <td>
+              <form action="{{ url_for('update_status', query_id=query.id) }}" method="get">
+                <button class="btn update">Update Status</button>
+              </form>
+            </td>
+            <td>
+              <form action="{{ url_for('close_query', query_id=query.id) }}" method="POST">
+                <button type="submit">Close Query</button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</body>
+</html>

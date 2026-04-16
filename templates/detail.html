@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ business[1] }} - NearNest</title>
+    <link rel="stylesheet" href="/static/dark-style.css">
+</head>
+<body class="dark-body">
+
+<header class="dark-header">
+    <h1>{{ business[1] }}</h1>
+    <p>{{ business[2] }} | {{ business[3] }}</p>
+</header>
+
+<main class="detail-container">
+    <section class="info-box">
+        <h2>Business Details</h2>
+        <p><strong>📍 Address:</strong> {{ business[4] }}</p>
+       <p><strong>⏰ Working Hours:</strong> {{ business[7] }}</p>
+        <p><strong>📞 Contact:</strong> {{ business[5] }}</p>
+        <p><strong>📧 Email:</strong> {{ business[6] }}</p>
+        <p><strong>📝 Description:</strong><br>{{ business[8] }}</p>
+    </section>
+
+    {% if business[9] %}
+    <section class="map-box">
+        <h2>📌 Location Map</h2>
+        <div class="map-container">
+            <iframe 
+                src="{{ business[9] }}" 
+                width="100%" 
+                height="300" 
+                style="border:0;" 
+                allowfullscreen 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+    {% else %}
+    <section class="map-box">
+        <h2>📌 Location Map</h2>
+        <p style="color: red;">❌ Invalid map link. Please paste a valid embed iframe code.</p>
+    </section>
+    {% endif %}
+
+    <section class="nav-links">
+        <a href="/businesses" class="btn-dark">← Back to Listings</a>
+        <a href="/" class="btn-dark">🏠 Home</a>
+    </section>
+</main>
+
+<footer class="dark-footer">
+    <p>&copy; 2025 NearNest Store Locator | Made with ❤️ in Pune 🇮🇳</p>
+</footer>
+
+</body>
+</html>

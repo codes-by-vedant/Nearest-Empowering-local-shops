@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login Dashboard - Pune Business Finder</title>
+  <link rel="stylesheet" href="/static/login_dashboard.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="top-nav">
+      <a href="/about" style="padding: 10px 10px; font-size: 1.1rem;">About</a>
+      <a href="/contact" style="padding: 10px 10px; font-size: 1.1rem;">Contact Us</a>
+    </div>
+    <div class="container">
+      <img src="/static/icons/logo.png.png" alt="Logo" class="site-logo-left" width="500" height="500">
+      <h1>NearNest</h1>
+      <p>Find the perfect store for your needs!</p>
+    </div>
+  </header>
+
+  <main class="login-dashboard">
+    <div class="login-buttons">
+      <a href="/owner_login" class="login-btn">Shop Owner Login</a>
+      <a href="{{ url_for('admin_login') }}" class="dashboard-btn admin-btn">Admin Login</a>
+      <a href="/support_login" class="login-btn">Support Team Login</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 NearNest Store locator | Built with ❤️ in Pune</p>
+    </div>
+  </footer>
+</body>
+</html>

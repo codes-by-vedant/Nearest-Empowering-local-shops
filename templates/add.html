@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Your Business - Pune Business Finder</title>
+    <link rel="stylesheet" href="/static/dark-style.css">
+</head>
+<body class="dark-body">
+    <header class="dark-header">
+        <h1>Add Your Business 📝</h1>
+        <p>Join Pune’s growing local network</p>
+    </header>
+
+    <section class="dark-form-section">
+        <form action="/add" method="post">
+            <label for="name">Business Name*</label>
+            <input type="text" name="name" required>
+
+            <label for="category">Category*</label>
+            <select name="category" id="category-select" required onchange="toggleOtherCategory(this)">
+                <option value="" disabled selected>Select a category</option>
+                <option value="Grocery Shops">Grocery Shops</option>
+                <option value="Clothing and Fashion">Clothing and Fashion</option>
+                <option value="Restaurants">Restaurants</option>
+                <option value="Hotels">Hotels</option>
+                <option value="Salon">Salon</option>
+                <option value="Plant Nursery">Plant Nursery</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Health">Health</option>
+                <option value="Bakery">Bakery</option>
+                <option value="Mobile Shops">Mobile Shops</option>
+                <option value="Hardware">Hardware</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Desserts">Desserts</option>
+                <option value="Stationary">Stationary</option>
+                <option value="Cafes">Cafes</option>
+                <option value="Automobile">Automobile</option>
+                <option value="Auto Accessories">Auto Accessories</option>
+                <option value="Jwellers">Jwellers</option>
+                <option value="Garages">Garages</option>
+                <option value="Optical Shops">Optical Shops</option>
+                <option value="Cosmetics">Cosmetics</option>
+                <option value="Toys">Toys</option>
+                <option value="Sports">Sports</option>
+                <option value="Home Furniture">Home Furniture</option>
+                <option value="Kitchen Accessories">Kitchen Accessories</option>
+                <option value="Books">Books</option>
+                <option value="Gardening">Gardening</option>
+                <option value="Clocks">Clocks</option>
+                <option value="Home Services">Home Services</option>
+                <option value="Travel">Travel</option>
+                <option value="-- Others --">-- Others --</option>
+            </select>
+
+            <div id="other-category-container" style="display: none;">
+                <label for="other-category">Specify Other Category</label>
+                <input type="text" name="other-category" id="other-category">
+            </div>
+
+            <label for="area">Area/Location*</label>
+            <input type="text" name="area" required>
+
+            <label for="address">Full Address*</label>
+            <textarea name="address" required></textarea>
+
+            <label for="contact">Contact Number*</label>
+            <div class="contact-input">
+                <span class="flag">🇮🇳 +91</span>
+                <input type="tel" name="contact" placeholder="Enter 10-digit mobile number" maxlength="10" required>
+            </div>
+
+            <label for="email">Email ID</label>
+            <input type="email" name="email" placeholder="example@email.com" required>
+
+            <label for="hours">Working Hours</label>
+            <div class="time-input-group">
+                <input type="time" name="start_time" step="300" required>
+                <span>to</span>
+                <input type="time" name="end_time" step="300" required>
+            </div>
+
+            <label for="description">Description / Products Offered*</label>
+            <textarea name="description" required></textarea>
+
+            <label for="map_link">Google Maps Embed Link:</label>
+            <textarea name="map_link" id="map_link" rows="3" required 
+    placeholder='Paste the full embed iframe code from Google Maps'></textarea>
+<small style="color: lightgray;">
+    Get this from Google Maps → Share → Embed a Map → Copy entire iframe code<br>
+    e.g., <code>&lt;iframe src="https://www.google.com/maps/embed?pb=..." ...&gt;&lt;/iframe&gt;</code>
+</small>
+
+            <button type="submit">Submit Business</button>
+        </form>
+    </section>
+
+    <section class="nav-links">
+        <a href="/" class="btn-dark">← Back to Home</a>
+        <a href="/businesses" class="btn-dark">View Listings</a>
+    </section>
+
+    <footer class="dark-footer">
+        <p>&copy; 2025 NearNest Store locator | Dark Mode Powered 🌙</p>
+    </footer>
+
+    <script>
+        function toggleOtherCategory(select) {
+            const otherCategoryContainer = document.getElementById('other-category-container');
+            if (select.value === '-- Others --') {
+                otherCategoryContainer.style.display = 'block';
+            } else {
+                otherCategoryContainer.style.display = 'none';
+            }
+        }
+    </script>
+
+    {% if success %}
+    <script>
+      window.onload = function() {
+        alert("✅ Business added successfully! Changes will be reflected on the platform shortly.");
+      };
+    </script>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Update Status - NearNest</title>
+  <link rel="stylesheet" href="/static/support_dashboard.css" />
+</head>
+<body>
+
+  <!-- Header (same as Support Dashboard) -->
+  <header class="header">
+    <img src="/static/icons/logo.png.png" alt="Logo" class="site-logo-left" width="100" height="100" />
+    <h1>Support Dashboard</h1>
+    <a href="/logout" class="logout-btn">Logout</a>
+  </header>
+
+  <!-- Status Update Form -->
+  <section class="raise-query-form">
+    <h2 style="text-align: center;">Update Query Status</h2>
+
+    <form method="POST">
+      <div class="radio-group custom-radio-group" style="justify-content: center;">
+        <label class="custom-radio">
+          <input type="radio" name="status" value="Open" required />
+          <span class="radio-btn"><i></i>Open</span>
+        </label>
+        <label class="custom-radio">
+          <input type="radio" name="status" value="In Progress" />
+          <span class="radio-btn"><i></i>In Progress</span>
+        </label>
+        <label class="custom-radio">
+          <input type="radio" name="status" value="Resolved" />
+          <span class="radio-btn"><i></i>Resolved</span>
+        </label>
+      </div>
+
+      <br>
+      <div style="text-align: center;">
+        <button type="submit" class="update-status-btn">Update</button>
+      </div>
+    </form>
+  </section>
+
+  {% if success %}
+  <script>
+    alert("Status updated successfully!");
+  </script>
+  {% endif %}
+
+</body>
+</html>

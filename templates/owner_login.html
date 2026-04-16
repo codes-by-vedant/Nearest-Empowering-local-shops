@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop Owner Login - NearNest</title>
+  <link rel="stylesheet" href="/static/login_dashboard.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="top-nav">
+      <a href="/about">About</a>
+      <a href="/contact">Contact Us</a>
+    </div>
+    <div class="container">
+      <img src="/static/icons/logo.png.png" alt="Logo" class="site-logo-left" width="500" height="500">
+      <h1>NearNest</h1>
+      <p>Find the perfect store for your needs!</p>
+    </div>
+  </header>
+
+  <main class="form-section">
+    <div class="form-toggle">
+      <button id="showLogin" class="active">Login</button>
+      <button id="showRegister">Register</button>
+    </div>
+
+    <div id="loginForm" class="form-box">
+      <h2>Shop Owner Login</h2>
+      <form action="/owner_login" method="post">
+        <label for="login-email">User ID (Email)</label>
+        <input type="email" id="login-email" name="email" required />
+
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" name="password" required />
+
+        <button type="submit" class="btn">Login</button>
+      </form>
+    </div>
+
+
+    <div id="registerForm" class="form-box hidden">
+      <h2>Register as Shop Owner</h2>
+      <form action="/owner/register" method="post">
+        <label for="reg-name">Full Name</label>
+        <input type="text" id="reg-name" name="name" required />
+
+        <label for="reg-contact">Contact Number</label>
+        <input type="tel" id="reg-contact" name="contact" pattern="[0-9]{10}" required />
+
+        <label for="reg-email">Email (User ID)</label>
+        <input type="email" id="reg-email" name="email" required />
+
+        <label for="reg-address">Address</label>
+        <textarea id="reg-address" name="address" required></textarea>
+
+        <label for="reg-password">Password</label>
+        <input type="password" id="reg-password" name="password" required />
+
+        <button type="submit" class="btn">Register</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 NearNest Store locator | Built with ❤️ in Pune</p>
+    </div>
+  </footer>
+
+  <script>
+    const showLoginBtn = document.getElementById("showLogin");
+    const showRegisterBtn = document.getElementById("showRegister");
+    const loginForm = document.getElementById("loginForm");
+    const registerForm = document.getElementById("registerForm");
+
+    showLoginBtn.onclick = () => {
+      loginForm.classList.remove("hidden");
+      registerForm.classList.add("hidden");
+      showLoginBtn.classList.add("active");
+      showRegisterBtn.classList.remove("active");
+    };
+
+    showRegisterBtn.onclick = () => {
+      registerForm.classList.remove("hidden");
+      loginForm.classList.add("hidden");
+      showRegisterBtn.classList.add("active");
+      showLoginBtn.classList.remove("active");
+    };
+  </script>
+  <script>
+  window.onload = function() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("success") === "register") {
+      alert("✅ Registration successful!");
+    } else if (params.get("success") === "login") {
+      alert("✅ Login successful!");
+    } else if (params.get("error") === "exists") {
+      alert("❌ A user already exists with this email.");
+    } else if (params.get("error") === "invalid") {
+      alert("❌ Invalid login credentials. Please try again.");
+    }
+  };
+</script>
+
+{% if login_failed %}
+<script>
+  alert("❌ Login failed! Incorrect email or password.");
+</script>
+{% endif %}
+
+    
+</body>
+</html>

@@ -1,0 +1,139 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f6fa;
+}
+
+.header {
+  background-color: #343a40;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header h1 {
+  margin-left: 230px;
+  font-size: 24px;
+}
+
+.top-right-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.back-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+
+.site-logo-left {
+  height: 60px;
+}
+
+.logout-btn {
+  background-color: #dc3545;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.query-table-section,
+.business-search,
+.search-results {
+  margin: 30px auto;
+  max-width: 1000px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.query-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.query-table th,
+.query-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.business-search form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.business-search input {
+  width: 60%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.business-search button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.business-card {
+  background-color: #e3f2fd;
+  padding: 15px;
+  border-radius: 8px;
+  width: calc(33.33% - 20px);
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.card-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #2ca849;
+  color: white;
+}
+
+.delete-btn {
+  background-color:     #c44141;
+  color: white;
+}
